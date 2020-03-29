@@ -42,7 +42,7 @@ io.on('connection', (client) => {
 
         let personas = usuarios.getPersonasBusqueda(data.sala, data.cadena);
 
-        callback(personas);
+        callback({ yo: client.id, usuarios: personas });
     });
 
     client.on('disconnect', () => {
