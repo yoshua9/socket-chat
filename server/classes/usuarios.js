@@ -28,6 +28,10 @@ class Usuarios {
         return this.personas.filter(persona => persona.sala === sala);
     }
 
+    getPersonasBusqueda(sala, cadena) {
+        return this.personas.filter(persona => persona.sala === sala && persona.nombre.toLowerCase().indexOf(cadena.toLowerCase()) === 0);
+    }
+
     borrarPersona(id) {
 
         let personaBorrada = this.getPersona(id);
